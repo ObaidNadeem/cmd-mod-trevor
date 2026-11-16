@@ -1,0 +1,32 @@
+{
+	"name": "cmd-mod-trevor",
+	"version": "0.0.1",
+	"private": true,
+	"description": "Your Command Code agent, but it talks like Trevor. Volatile, loyal, bleeped, and still ships clean code.",
+	"keywords": [
+		"cmd-mod",
+		"cmd-mod-hook",
+		"cmd-mod-command",
+		"commandcode",
+		"persona"
+	],
+	"author": "Obaid Nadeem (https://github.com/ObaidNadeem)",
+	"license": "MIT",
+	"homepage": "https://github.com/ObaidNadeem/cmd-mod-trevor#readme",
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/ObaidNadeem/cmd-mod-trevor.git"
+	},
+	"type": "module",
+	"files": [
+		"index.ts",
+		"persona.ts",
+		"README.md",
+		"LICENSE"
+	],
+	"commandcode": {
+		"mods": [
+			"./index.ts"
+		]
+	}
+}
