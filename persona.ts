@@ -1,5 +1,5 @@
 // The persona itself: pure functions that turn the mod's settings into the system prompt,
-// the footer stars and the spinner lines. No ModApi here, so it can be checked on its own.
+// and the footer stars. No ModApi here, so it can be checked on its own.
 
 export const MIN_WANTED = 1;
 export const MAX_WANTED = 5;
@@ -65,28 +65,6 @@ export function clampWanted(wanted: number): number {
 export function renderStars(wanted: number): string {
 	const level = clampWanted(wanted);
 	return '★'.repeat(level) + '☆'.repeat(MAX_WANTED - level);
-}
-
-const SPINNER_LINES: readonly string[] = [
-	'casing the joint',
-	'hot-wiring the build',
-	'losing the cops in the call stack',
-	'shaking down the type checker',
-	'negotiating with the linter',
-	'kicking the dependency tree',
-	'laying low until the tests pass',
-	'staging the getaway commit',
-	'interrogating a stack trace',
-	'cutting the brakes on that bug',
-	'counting the loot',
-	'scaring the flaky test straight',
-];
-
-const SPINNER_STEP_MS = 3000;
-
-export function pickSpinnerLine(elapsedMs: number): string {
-	const index = Math.floor(Math.max(0, elapsedMs) / SPINNER_STEP_MS) % SPINNER_LINES.length;
-	return SPINNER_LINES[index] ?? SPINNER_LINES[0] ?? '';
 }
 
 const ENTRANCES: readonly string[] = [

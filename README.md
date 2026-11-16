@@ -21,7 +21,6 @@ cmd --mod ./cmd-mod-trevor
 
 - **The voice.** The agent opens and closes in character: mood swings, rants at bugs, calls you "partner". Code, commits, and files stay professional.
 - **Wanted level.** One to five stars set how hot it runs. One star is a simmer, five is a full rampage. The stars sit in the footer.
-- **The spinner.** While it works you get "hot-wiring the build", "losing the cops in the call stack", and friends.
 - **Bleeped, not filthy.** Curses come out as grawlix (`$#!%`). No slurs, and it never turns on you. The anger goes at the code.
 
 ## Commands

@@ -2,7 +2,7 @@
 //
 // - appendSystemPrompt adds the persona, tuned by the wanted level (1-5 stars).
 // - /trevor turns it on or off and sets the wanted level; both persist across sessions.
-// - The footer shows the wanted stars, and the spinner runs Trevor's own status lines.
+// - The footer shows the wanted stars.
 
 import type {ModApi, ModCommandResult} from '@commandcode/harness';
 import {
@@ -11,7 +11,6 @@ import {
 	MIN_WANTED,
 	parseAction,
 	pickEntrance,
-	pickSpinnerLine,
 	renderStars,
 	toConfig,
 	type TrevorConfig,
@@ -55,11 +54,6 @@ export default function (cmd: ModApi): void {
 		onSessionEnd: () => {
 			cmd.ui.setStatus(null);
 		},
-	});
-
-	cmd.ui.override('spinner', (props, next) => {
-		if (!readConfig().isOn) return undefined;
-		return [{type: 'text', text: pickSpinnerLine(props.elapsedMs), color: 'yellow'}, ...(next() ?? [])];
 	});
 
 	cmd.addCommand({
